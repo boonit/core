@@ -831,6 +831,13 @@ SENSORS: dict[str, tuple[TuyaSensorEntityDescription, ...]] = {
             subkey="voltage",
         ),
         TuyaSensorEntityDescription(
+            key=DPCode.ADD_ELE,
+            translation_key="total_energy",
+            device_class=SensorDeviceClass.ENERGY,
+            state_class=SensorStateClass.TOTAL_INCREASING,
+            entity_registry_enabled_default=False,
+        ),
+        TuyaSensorEntityDescription(
             key=DPCode.CUR_CURRENT,
             translation_key="current",
             device_class=SensorDeviceClass.CURRENT,
